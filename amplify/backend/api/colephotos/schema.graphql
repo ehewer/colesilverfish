@@ -1,0 +1,6 @@
+type Photo @model {
+  id: ID!
+  name: String!
+  description: String
+  image: String
+}

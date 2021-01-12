@@ -1,7 +1,12 @@
 import React from "react"
 
+// components
+import Menu from "../components/menu"
+
 export default function Upload() {
     return(
-        <p>GET OUTTA HERE</p>
+        <Menu>
+            <p>GET OUTTA HERE</p>
+        </Menu>
     )
 }

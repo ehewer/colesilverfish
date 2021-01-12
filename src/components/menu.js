@@ -26,24 +26,36 @@ export default function Menu({ children }) {
                 padding-top: ${rhythm(1.5)};
             `}
         >
-            <Link to={`/`}>
+            <Link to={"/"}>
                 <h3
-                css={css`
-                    margin-bottom: ${rhythm(2)};
-                    display: inline-block;
-                    font-style: normal;
-                `}
+                    css={css`
+                        margin-bottom: ${rhythm(2)};
+                        display: inline-block;
+                        font-style: normal;
+                    `}
                 >
-                {data.site.siteMetadata.fullname}
+                    {data.site.siteMetadata.fullname}
                 </h3>
             </Link>
             <Link
-                to={`/about/`}
+                to={"/about/"}
                 css={css`
-                float: right;
+                    float: right;
+                    padding-left: 20px;
+                    padding-right: 20px;
                 `}
             >
                 About
+            </Link>
+            <Link
+                to={"/upload"}
+                css={css`
+                    float: right;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                `}
+            >
+                Upload
             </Link>
             {children}
         </div>
