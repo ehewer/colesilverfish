@@ -1,5 +1,5 @@
 # A Photography Portfolio Website
-[link to website](colesilverfish.com);
+[colesilverfish.com](https://www.colesilverfish.com)
 
 ## About
 This is a personal project to create a photography portfolio website for "Cole Silverfish". The goal is to learn about web dev frameworks and tools like React and AWS, while also obtaining a practical personal website as a bonus.
