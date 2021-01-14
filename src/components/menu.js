@@ -1,8 +1,12 @@
-import React from "react"
-import { css } from "@emotion/react"
-import { useStaticQuery, Link, graphql } from "gatsby"
+import React from "react";
+import { css } from "@emotion/react";
+import { rhythm } from "../utils/typography";
 
-import { rhythm } from "../utils/typography"
+// components
+import { useStaticQuery, Link, graphql } from "gatsby";
+
+// webpack
+import logo from "../images/silverfish.jpg"
 
 export default function Menu({ children }) {
     const data = useStaticQuery(
@@ -34,7 +38,7 @@ export default function Menu({ children }) {
                         font-style: normal;
                     `}
                 >
-                    {data.site.siteMetadata.fullname}
+                    <img src={logo} alt="Logo" width = "50" height = "50"></img>
                 </h3>
             </Link>
             <Link

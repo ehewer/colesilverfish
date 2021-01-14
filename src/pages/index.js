@@ -1,10 +1,15 @@
-import React from "react"
-import styled from "styled-components"
-import { useStaticQuery, Link, graphql } from "gatsby"
+import React from "react";
+import styled from "styled-components";
+import { useStaticQuery, Link, graphql } from "gatsby";
 
 // components
-import Menu from "../components/menu"
-import { Helmet } from "react-helmet"
+import Menu from "../components/menu";
+import { Helmet } from "react-helmet";
+
+// Amplify
+import Amplify from 'aws-amplify'
+import config from '../aws-exports'
+Amplify.configure(config);
 
 export default function Home({data}) {
   return (

@@ -14,7 +14,9 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^0.2.34",
     "@emotion/react": "^11.1.4",
+    "aws-amplify": "^3.3.14",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.9.0",
     "gatsby-plugin-emotion": "^5.2.0",

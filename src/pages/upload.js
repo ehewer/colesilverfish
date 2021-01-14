@@ -1,12 +1,18 @@
-import React from "react"
+import React from "react";
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
 // components
 import Menu from "../components/menu"
 
-export default function Upload() {
+const Upload = () => {
     return(
-        <Menu>
-            <p>GET OUTTA HERE</p>
-        </Menu>
+        <div>
+            <Menu>
+                <p>You are logged in!</p>
+                <AmplifySignOut></AmplifySignOut>
+            </Menu>
+        </div>
     )
 }
+
+export default withAuthenticator(Upload);
