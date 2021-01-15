@@ -38,7 +38,7 @@ export default function Menu({ children }) {
                         font-style: normal;
                     `}
                 >
-                    <img src={logo} alt="Logo" width = "50" height = "50"></img>
+                    {data.site.siteMetadata.fullname}
                 </h3>
             </Link>
             <Link

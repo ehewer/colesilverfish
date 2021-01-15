@@ -1,15 +1,17 @@
 import React from "react";
 import { css } from "@emotion/react";
+import { graphql } from "gatsby"
 
 // components
 import Menu from "../components/menu";
 import SimpleReactLightbox from "simple-react-lightbox";
 import {SRLWrapper} from "simple-react-lightbox";
+import Img from "gatsby-image";
 
 // webpack
 import profilepic from "../images/self_proBW2re.jpg"
 
-export default function About() {
+export default function About({data}) {
     return(
         <SimpleReactLightbox>
             <Menu>
@@ -27,11 +29,29 @@ export default function About() {
                         <br></br>
                         By day, Cole is a Computer Engineering student in Vancouver, Canada. Building this website is his current personal project, and you can find his GitHub <a href="https://github.com/ehewer">here</a>.
                     </p>
+
+                    <Img fluid={data.self.childImageSharp.fluid} alt="Headshot"/>
+                    {/*
                     <a href={profilepic}>
-                        <img src={profilepic} alt="self" width="700px"></img>
+                        <img src={profilepic} alt="self" width="700px"/>
                     </a>
+                    */}
                 </SRLWrapper>
             </Menu>
         </SimpleReactLightbox>
     )
 }
+
+export const query = graphql`
+    query {
+        self: file(relativePath: { eq: "self_proBW2re.jpg" }) {
+            childImageSharp {
+                # Specify the image processing specifications right in the query.
+                # Makes it trivial to update as your page's design changes.
+                fluid(maxWidth:1000) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                }
+            }
+        }
+    }
+`

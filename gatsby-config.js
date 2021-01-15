@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
+const path = require("path");
 
 module.exports = {
   /* Your site config here */
@@ -13,17 +14,20 @@ module.exports = {
   plugins: [
     "gatsby-plugin-emotion",
     "gatsby-plugin-react-helmet",
-    {
-      resolve: "gatsby-plugin-sharp",
-      options: {
-
-      }
-    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: path.join(__dirname, "src", "images"),
+        name: "images"
+      }
+    }
   ],
 }
