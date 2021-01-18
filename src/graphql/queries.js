@@ -6,8 +6,13 @@ export const getPhoto = /* GraphQL */ `
     getPhoto(id: $id) {
       id
       name
-      description
+      altText
       image
+      camera
+      focalLength
+      aperture
+      shutterSpeed
+      ISO
       createdAt
       updatedAt
     }
@@ -23,8 +28,13 @@ export const listPhotos = /* GraphQL */ `
       items {
         id
         name
-        description
+        altText
         image
+        camera
+        focalLength
+        aperture
+        shutterSpeed
+        ISO
         createdAt
         updatedAt
       }

@@ -1,6 +1,11 @@
 type Photo @model {
   id: ID!
   name: String!
-  description: String
-  image: String
+  altText: String
+  image: String!
+  camera: String
+  focalLength: Int
+  aperture: String
+  shutterSpeed: String
+  ISO: String
 }

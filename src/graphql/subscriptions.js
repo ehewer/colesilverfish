@@ -6,8 +6,13 @@ export const onCreatePhoto = /* GraphQL */ `
     onCreatePhoto {
       id
       name
-      description
+      altText
       image
+      camera
+      focalLength
+      aperture
+      shutterSpeed
+      ISO
       createdAt
       updatedAt
     }
@@ -18,8 +23,13 @@ export const onUpdatePhoto = /* GraphQL */ `
     onUpdatePhoto {
       id
       name
-      description
+      altText
       image
+      camera
+      focalLength
+      aperture
+      shutterSpeed
+      ISO
       createdAt
       updatedAt
     }
@@ -30,8 +40,13 @@ export const onDeletePhoto = /* GraphQL */ `
     onDeletePhoto {
       id
       name
-      description
+      altText
       image
+      camera
+      focalLength
+      aperture
+      shutterSpeed
+      ISO
       createdAt
       updatedAt
     }

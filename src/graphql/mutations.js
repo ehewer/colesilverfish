@@ -9,8 +9,13 @@ export const createPhoto = /* GraphQL */ `
     createPhoto(input: $input, condition: $condition) {
       id
       name
-      description
+      altText
       image
+      camera
+      focalLength
+      aperture
+      shutterSpeed
+      ISO
       createdAt
       updatedAt
     }
@@ -24,8 +29,13 @@ export const updatePhoto = /* GraphQL */ `
     updatePhoto(input: $input, condition: $condition) {
       id
       name
-      description
+      altText
       image
+      camera
+      focalLength
+      aperture
+      shutterSpeed
+      ISO
       createdAt
       updatedAt
     }
@@ -39,8 +49,13 @@ export const deletePhoto = /* GraphQL */ `
     deletePhoto(input: $input, condition: $condition) {
       id
       name
-      description
+      altText
       image
+      camera
+      focalLength
+      aperture
+      shutterSpeed
+      ISO
       createdAt
       updatedAt
     }
