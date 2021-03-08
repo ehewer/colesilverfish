@@ -1,11 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { css } from "@emotion/react"
 import { graphql } from "gatsby";
-import { API, Storage } from "aws-amplify";
-import { listPhotos } from "../graphql/queries"
-import { createPhoto as createPhotoMutation,
-          updatePhoto as updatePhotoMutation,
-          deletePhoto as deletePhotoMutation } from  "../graphql/mutations"
 
 // components
 import Menu from "../components/menu";
@@ -18,67 +13,66 @@ import Amplify from 'aws-amplify'
 import config from '../aws-exports'
 Amplify.configure(config);
 
-export default function Home({data}) {
-  
-return (
-    <div>
-        <Helmet>
-            <title>{data.site.siteMetadata.fullname}</title>
-        </Helmet>
+export default function Home({data}) { 
+    return (
+        <div>
+            <Helmet>
+                <title>{data.site.siteMetadata.fullname}</title>
+            </Helmet>
 
-        <div
-            css={css`
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            `}
-        >
-            <h1
-            css={css`
-            `}
-            >
-            Hello there.
-            </h1>
-        </div>
-
-        <Parallax
-            strength={500}
-        >
-            <Background>
             <div
                 css={css`
-                height: 1000px;
-                width: 2000px;
-                `}
-            >
-                <Img fluid={data.background.childImageSharp.fluid} alt="Coal Harbor"/>
-            </div>
-            
-            </Background>
-
-            <div 
-            css={css`
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 500px;
-            `}
-            >
-            <Img fluid={data.logo.childImageSharp.fluid} alt="logo"
-                css={css`
                 height: 200px;
-                width: 200px;
                 `}
-            />
+            >
+                <h1
+                css={css`
+                `}
+                >
+                Hello there.
+                </h1>
             </div>
-        </Parallax>
 
-        <Menu>
-            <p>Nothing to see here right now... this site is currently in progress!</p>
-        </Menu>
-        
-    </div>
+            <Parallax
+                strength={500}
+            >
+                <Background>
+                <div
+                    css={css`
+                    height: 1000px;
+                    width: 2000px;
+                    `}
+                >
+                    <Img fluid={data.background.childImageSharp.fluid} alt="Coal Harbor"/>
+                </div>
+                
+                </Background>
+
+                <div 
+                css={css`
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 500px;
+                `}
+                >
+                <Img fluid={data.logo.childImageSharp.fluid} alt="logo"
+                    css={css`
+                    height: 200px;
+                    width: 200px;
+                    `}
+                />
+                </div>
+            </Parallax>
+
+            <Menu>
+                <p>Not much to see here right now... this site is currently in progress!</p>
+            </Menu>
+            
+        </div>
     )
 }
 

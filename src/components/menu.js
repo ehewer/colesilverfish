@@ -5,9 +5,6 @@ import { rhythm } from "../utils/typography";
 // components
 import { useStaticQuery, Link, graphql } from "gatsby";
 
-// webpack
-import logo from "../images/silverfish.jpg"
-
 export default function Menu({ children }) {
     const data = useStaticQuery(
         graphql`
@@ -52,14 +49,14 @@ export default function Menu({ children }) {
                 About
             </Link>
             <Link
-                to={"/upload"}
+                to={"/gallery"}
                 css={css`
                     float: right;
                     padding-left: 20px;
                     padding-right: 20px;
                 `}
             >
-                Upload
+                Gallery
             </Link>
             {children}
         </div>

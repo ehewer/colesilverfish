@@ -8,9 +8,6 @@ import SimpleReactLightbox from "simple-react-lightbox";
 import {SRLWrapper} from "simple-react-lightbox";
 import Img from "gatsby-image";
 
-// webpack
-import profilepic from "../images/self_proBW2re.jpg"
-
 export default function About({data}) {
     return(
         <SimpleReactLightbox>

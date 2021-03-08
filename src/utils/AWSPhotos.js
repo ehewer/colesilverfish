@@ -11,10 +11,10 @@ function AWSPhotos () {
     const [formData, setFormData] = useState(initialFormState);
 
     useEffect(() => {
-        fetchPhotos();
+        this.fetchPhotos();
     }, []);
 
-    async function fetchPhotos() {
+    this.fetchPhotos = async function () {
         const apiData = await API.graphql({ query: listPhotos });
         const photosFromAPI = apiData.data.listPhotos.items;
         await Promise.all(photosFromAPI.map(async photo => {
@@ -25,7 +25,7 @@ function AWSPhotos () {
         setPhotos(apiData.data.listPhotos.items);
     }
 
-    async function createPhoto() {
+    this.createPhoto = async function () {
         if (!formData.name || !formData.image) {
             return;
         }
@@ -38,13 +38,13 @@ function AWSPhotos () {
         setFormData(initialFormState);
     }
 
-    async function deletePhoto({ id }) {
+    this.deletePhoto = async function ({ id }) {
         const newPhotosArray = photos.filter(photo => photo.id !== id);
         setPhotos(newPhotosArray);
         await API.graphql({ query: deletePhotoMutation, variables: { input: { id } } });
     }
 
-    async function onChange(e) {
+    this.onChange = async function (e) {
         if (!e.target.files[0]) {
             return;
         }
