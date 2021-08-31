@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "@emotion/react"
 
-// compoenents
+// components
 import Menu from "../components/menu"
 import SimpleReactLightbox from "simple-react-lightbox";
 import {SRLWrapper} from "simple-react-lightbox";
