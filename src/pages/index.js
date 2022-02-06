@@ -32,7 +32,7 @@ export default function Home({data}) {
                 css={css`
                 `}
                 >
-                Hello there.
+                COLE SILVERFISH
                 </h1>
             </div>
 
@@ -40,15 +40,14 @@ export default function Home({data}) {
                 strength={500}
             >
                 <Background>
-                <div
-                    css={css`
-                    height: 1000px;
-                    width: 2000px;
-                    `}
-                >
-                    <Img fluid={data.background.childImageSharp.fluid} alt="Coal Harbor"/>
-                </div>
-                
+                    <div
+                        css={css`
+                        height: 1000px;
+                        width: 2000px;
+                        `}
+                    >
+                        <Img fluid={data.background.childImageSharp.fluid} alt="A ship at Lions Gate Bridge"/>
+                    </div>
                 </Background>
 
                 <div 
@@ -59,18 +58,16 @@ export default function Home({data}) {
                     height: 500px;
                 `}
                 >
-                <Img fluid={data.logo.childImageSharp.fluid} alt="logo"
-                    css={css`
-                    height: 200px;
-                    width: 200px;
-                    `}
-                />
+                    <Img fluid={data.logo.childImageSharp.fluid} alt="logo"
+                        css={css`
+                        height: 200px;
+                        width: 200px;
+                        `}
+                    />
                 </div>
             </Parallax>
 
-            <Menu>
-                <p>Not much to see here right now... this site is currently in progress!</p>
-            </Menu>
+            <Menu></Menu>
             
         </div>
     )
@@ -83,7 +80,7 @@ export const query = graphql`
             fullname
         }
     }
-    logo: file(relativePath: { eq: "silverfishTRANSPARENT.png" }) {
+    logo: file(relativePath: { eq: "logos/silverfish_white_TP.png" }) {
       childImageSharp {
           # Specify the image processing specifications right in the query.
           # Makes it trivial to update as your page's design changes.
@@ -92,7 +89,7 @@ export const query = graphql`
           }
       }
     }
-    background: file(relativePath: { eq: "rowers.jpg" }) {
+    background: file(relativePath: { eq: "boat_stanley.JPG" }) {
       childImageSharp {
           # Specify the image processing specifications right in the query.
           # Makes it trivial to update as your page's design changes.

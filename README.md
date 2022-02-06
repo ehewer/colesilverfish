@@ -4,6 +4,12 @@
 ## About
 This is a personal project to create a photography portfolio website for "Cole Silverfish". The goal is to learn about web dev frameworks and tools like React and AWS, while also obtaining a practical personal website as a bonus.
 
+## Running the site
+Use `npm start` or `gatsby develop` to start a development server.
+
+## Images
+Most images on the site use `gatsby-plugin-image` (formerly `gatsby-image`, now deprecated). Images are stored locally and are fetched using a graphql query. 
+
 ## Todo (tolearn)
 1. React (JavaScript library)
     - including JSX, a JavaScript syntax extention
