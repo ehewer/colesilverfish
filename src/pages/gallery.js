@@ -5,7 +5,8 @@ import { css } from "@emotion/react"
 import Menu from "../components/menu"
 import SimpleReactLightbox from "simple-react-lightbox";
 import {SRLWrapper} from "simple-react-lightbox";
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image";
+// import Img from "gatsby-image"
 
 export default function Gallery({data}) {
     return(
@@ -19,6 +20,12 @@ export default function Gallery({data}) {
                     >
                         Click on images for a lightbox.
                     </p>
+                    
+                    <StaticImage
+                        src="../images/gallery/bridge.jpg"
+                        alt="A couple on a bridge"
+                    />
+                    {/*
                     <div>
                         {
                         data.allFile.edges.map(({node}, index) => (
@@ -30,12 +37,14 @@ export default function Gallery({data}) {
                         ))
                         }
                     </div>
+                    */}
                 </SRLWrapper>
             </Menu>
         </SimpleReactLightbox>
     )
 }
 
+/*
 export const query = graphql`
     query MyQuery {
         allFile(filter: {relativeDirectory: {eq: "gallery"}}) {
@@ -52,3 +61,4 @@ export const query = graphql`
         }
     }
 `
+*/

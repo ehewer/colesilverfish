@@ -15,7 +15,7 @@ module.exports = {
     "gatsby-plugin-emotion",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    "gatsby-plugin-image",
     {
       resolve: `gatsby-plugin-typography`,
       options: {

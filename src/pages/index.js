@@ -6,7 +6,7 @@ import { graphql } from "gatsby";
 import Menu from "../components/menu";
 import { Helmet } from "react-helmet";
 import { Parallax, Background } from "react-parallax";
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 // Amplify
 import Amplify from 'aws-amplify'
@@ -46,7 +46,12 @@ export default function Home({data}) {
                         width: 2000px;
                         `}
                     >
-                        <Img fluid={data.background.childImageSharp.fluid} alt="A ship at Lions Gate Bridge"/>
+                        <StaticImage
+                            src="../images/boat_stanley.JPG"
+                            alt="A ship at Lions Gate Bridge"
+                            layout="fullWidth"
+                            placeholder="blurred"
+                        />
                     </div>
                 </Background>
 
@@ -58,11 +63,12 @@ export default function Home({data}) {
                     height: 500px;
                 `}
                 >
-                    <Img fluid={data.logo.childImageSharp.fluid} alt="logo"
-                        css={css`
-                        height: 200px;
-                        width: 200px;
-                        `}
+                    <StaticImage
+                        src="../images/logos/silverfish_white_TP.png"
+                        alt="logo"
+                        placeholder="tracedSVG"
+                        width={200}
+                        height={200}
                     />
                 </div>
             </Parallax>
@@ -73,17 +79,20 @@ export default function Home({data}) {
     )
 }
 
+
 export const query = graphql`
-  query {
-    site {
-        siteMetadata {
-            fullname
+    query {
+        site {
+            siteMetadata {
+                fullname
+            }
         }
     }
+`
+/*
     logo: file(relativePath: { eq: "logos/silverfish_white_TP.png" }) {
       childImageSharp {
-          # Specify the image processing specifications right in the query.
-          # Makes it trivial to update as your page's design changes.
+          gatsbyImageData(layout: FLUID)
           fluid(maxWidth: 300, maxHeight: 300) {
               ...GatsbyImageSharpFluid_tracedSVG
           }
@@ -91,8 +100,7 @@ export const query = graphql`
     }
     background: file(relativePath: { eq: "boat_stanley.JPG" }) {
       childImageSharp {
-          # Specify the image processing specifications right in the query.
-          # Makes it trivial to update as your page's design changes.
+          gatsbyImageData(layout: FLUID)
           fluid(maxHeight: 1575) {
               ...GatsbyImageSharpFluid_tracedSVG
           }
@@ -100,3 +108,4 @@ export const query = graphql`
     }
   }
 `
+*/
