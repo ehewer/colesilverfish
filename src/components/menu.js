@@ -5,6 +5,9 @@ import { rhythm } from "../utils/typography";
 // components
 import { useStaticQuery, Link, graphql } from "gatsby";
 
+/* Simple navigation menu
+ *
+ */ 
 export default function Menu({ children }) {
     const data = useStaticQuery(
         graphql`
@@ -21,6 +24,9 @@ export default function Menu({ children }) {
     return (
         <div
             css={css`
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
                 margin: 0 auto;
                 max-width: 700px;
                 padding: ${rhythm(2)};

@@ -11,8 +11,15 @@ import { StaticImage } from "gatsby-plugin-image";
 export default function About({data}) {
     return(
         <SimpleReactLightbox>
-            <Menu>
-                <SRLWrapper>
+            <Menu/>
+                
+            <SRLWrapper>
+                <div
+                    css={css`
+                        margin: 0 auto;
+                        max-width: 700px;
+                    `}
+                >
                     <b 
                         css={css`
                             margin-bottom: 50px;
@@ -20,6 +27,7 @@ export default function About({data}) {
                     >
                         Cole Silverfish is neither silver nor fish.
                     </b>
+
                     <p>
                         As a lifelong film lover but a newcomer to photography, Cole is continuously looking to sharpen his photo-taking and editing skills. He also looks to expand into videography and filmmaking in the future.
                         <br></br>
@@ -31,13 +39,8 @@ export default function About({data}) {
                         src="../images/self_proBW2re.jpg"
                         alt="Headshot"
                     />
-                    {/*
-                    <a href={profilepic}>
-                        <img src={profilepic} alt="self" width="700px"/>
-                    </a>
-                    */}
-                </SRLWrapper>
-            </Menu>
+                </div>
+            </SRLWrapper>
         </SimpleReactLightbox>
     )
 }
