@@ -59,6 +59,7 @@ export const query = graphql`
                     childImageSharp {
                         gatsbyImageData(
                             layout: CONSTRAINED
+                            placeholder: TRACED_SVG
                         )
                     }
                 }
@@ -72,6 +73,7 @@ export const query = graphql`
                     childImageSharp {
                         gatsbyImageData(
                             layout: CONSTRAINED
+                            placeholder: TRACED_SVG
                         )
                     }
                 }
@@ -85,6 +87,7 @@ export const query = graphql`
                     childImageSharp {
                         gatsbyImageData(
                             layout: CONSTRAINED
+                            placeholder: TRACED_SVG
                         )
                     }
                 }
