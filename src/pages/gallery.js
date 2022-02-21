@@ -5,8 +5,7 @@ import { graphql } from "gatsby";
 // components
 import Menu from "../components/menu"
 import SimpleReactLightbox from "simple-react-lightbox";
-import {SRLWrapper} from "simple-react-lightbox";
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import { SRLWrapper } from "simple-react-lightbox";
 import ImgCol from "../components/imgcol";
 
 export default function Gallery({data}) {
@@ -15,24 +14,28 @@ export default function Gallery({data}) {
             <Menu/>
 
             <SRLWrapper>
-                <p 
+                <div
                     css={css`
+                        margin: auto;
                         margin-bottom: 50px;
+                        max-width: 1100px;
                     `}
                 >
-                    Click on images for a lightbox.
-                </p>
+                    <p 
+                        css={css`
+                            text-align: center;
+                        `}
+                    >
+                        Click on images for a lightbox.
+                    </p>
+                </div>
                 
-                <StaticImage
-                    src="../images/rowers.jpg"
-                    alt="Rowers in Coal Harbor"
-                />
-
                 <div
                     css={css`
                         display: flex;
                         justify-content: center;
-                        max-width: 700px
+                        max-width: 1100px;
+                        margin: auto;
                     `}
                 >
                     {/* Column 1 */}
@@ -51,7 +54,10 @@ export default function Gallery({data}) {
 
 export const query = graphql`
     query {
-        col1: allFile(filter: {relativeDirectory: {eq: "gallery/col1"}}) {
+        col1: allFile(
+            filter: {relativeDirectory: {eq: "gallery/col1"}}
+            sort: {fields: relativePath, order: ASC}
+        ) {
             edges {
                 node {
                     name
@@ -65,7 +71,10 @@ export const query = graphql`
                 }
             }
         }
-        col2: allFile(filter: {relativeDirectory: {eq: "gallery/col2"}}) {
+        col2: allFile(
+            filter: {relativeDirectory: {eq: "gallery/col2"}}
+            sort: {fields: relativePath, order: ASC}
+        ) {
             edges {
                 node {
                     name
@@ -79,7 +88,10 @@ export const query = graphql`
                 }
             }
         }
-        col3: allFile(filter: {relativeDirectory: {eq: "gallery/col3"}}) {
+        col3: allFile(
+            filter: {relativeDirectory: {eq: "gallery/col3"}}
+            sort: {fields: relativePath, order: ASC}
+        ) {
             edges {
                 node {
                     name

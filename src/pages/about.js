@@ -18,6 +18,7 @@ export default function About({data}) {
                     css={css`
                         margin: 0 auto;
                         max-width: 700px;
+                        padding: 20px;
                     `}
                 >
                     <b 
@@ -25,38 +26,33 @@ export default function About({data}) {
                             margin-bottom: 50px;
                         `}
                     >
-                        Cole Silverfish is neither silver nor fish.
+                        Cole Silverfish is the photography alias of Elijah Hewer.
                     </b>
 
+                    <StaticImage
+                        src="../images/blinded.jpg"
+                        alt="Cole Silverfish portrait"
+                        height={400}
+                        css={css`
+                            margin-top: 40px;
+                            margin-bottom: 40px;
+                        `}
+                    />
+
                     <p>
-                        As a lifelong film lover but a newcomer to photography, Cole is continuously looking to sharpen his photo-taking and editing skills. He also looks to expand into videography and filmmaking in the future.
-                        <br></br>
-                        <br></br>
-                        By day, Cole is a Computer Engineering student in Vancouver, Canada. Building this website is his current personal project, and you can find his GitHub <a href="https://github.com/ehewer">here</a>.
+                        As a lifelong film lover but a newcomer to photography,
+                        Elijah is continuously looking to sharpen his photo-taking and editing skills.
+                        Currently, he is an Assistant Director for the Media team of the UBC Recreation Intramural program.
+                        <br/>
+                        <br/>
+                        Elijah is also a Computer Engineering student at UBC in Vancouver, Canada.
+                        Building and improving this website is an ongoing personal project, 
+                        and you can browse his <a href="https://github.com/ehewer">GitHub</a> and <a href="https://www.linkedin.com/in/elijahhewer/">LinkedIn</a>.
                     </p>
 
-                    <StaticImage
-                        src="../images/self_proBW2re.jpg"
-                        alt="Headshot"
-                    />
+                    
                 </div>
             </SRLWrapper>
         </SimpleReactLightbox>
     )
 }
-
-/*
-export const query = graphql`
-    query {
-        self: file(relativePath: { eq: "self_proBW2re.jpg" }) {
-            childImageSharp {
-                # Specify the image processing specifications right in the query.
-                # Makes it trivial to update as your page's design changes.
-                fluid(maxWidth:1000) {
-                    ...GatsbyImageSharpFluid_tracedSVG
-                }
-            }
-        }
-    }
-`
-*/

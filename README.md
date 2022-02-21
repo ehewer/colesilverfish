@@ -17,7 +17,7 @@ Most images on the site use `gatsby-plugin-image` (formerly `gatsby-image`, now 
 
 I originally planned to store all images in an S3 bucket and dynamically update the gallery when new images were uploaded. I plan to revisit this in the future.
 
-## Todo (tolearn)
+## TODO (tolearn)
 1. React (JavaScript library)
     - including JSX, a JavaScript syntax extention
 2. Gatsby (React-based framework)

@@ -15,6 +15,7 @@ export default function ImgCol({ edges }) {
                 <GatsbyImage
                     image={node.childImageSharp.gatsbyImageData}
                     alt={node.name}
+                    key={node.relativePath}
                     css={css`
                         margin: 20px;
                     `}

@@ -1,9 +1,8 @@
 import React from "react";
 import { css } from "@emotion/react"
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 // components
-import Menu from "../components/menu";
 import { Helmet } from "react-helmet";
 import { Parallax, Background } from "react-parallax";
 import { StaticImage } from "gatsby-plugin-image"
@@ -25,43 +24,48 @@ export default function Home({data}) {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 200px;
+                height: 150px;
                 `}
             >
                 <h1
                 css={css`
+                    font-size: 3vw;
+                    letter-spacing: 2rem;
+                    text-align: center;
                 `}
                 >
-                COLE SILVERFISH
+                    COLE SILVERFISH
                 </h1>
             </div>
 
             <Parallax
-                strength={500}
+                strength={300}
             >
                 <Background>
                     <div
                         css={css`
                         height: 1000px;
                         width: 2000px;
+                        margin-bottom: 0px;
                         `}
                     >
                         <StaticImage
-                            src="../images/boat_stanley.JPG"
+                            src="../images/boat_stanley_CROP.JPG"
                             alt="A ship at Lions Gate Bridge"
-                            layout="fullWidth"
                             placeholder="blurred"
+                            layout="fullWidth"
+                            quality={80}
                         />
                     </div>
                 </Background>
 
                 <div 
-                css={css`
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 500px;
-                `}
+                    css={css`
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 500px;
+                    `}
                 >
                     <StaticImage
                         src="../images/logos/silverfish_white_TP.png"
@@ -73,7 +77,80 @@ export default function Home({data}) {
                 </div>
             </Parallax>
 
-            <Menu></Menu>
+            {/*
+                Use a CSS grid to put links on top of GatsbyImage components 
+                for better optimization than regular background images
+            */}
+            <div
+                css={css`
+                    display: grid;
+                    place-items: center;
+                    justify-items: center;
+                    grid-template-columns: 1fr 1fr;
+                    max-width: 900px;
+                    margin: auto;
+                `}
+            >
+                {/* Menu Link 1 (About) */}
+                <StaticImage
+                    src="../images/kawhactus1.jpg"
+                    alt=""
+                    placeholder="blurred"
+                    css={css`
+                        grid-area: 1/1;
+                        width: 1fr;
+                        margin: 30px;
+                    `}
+                />
+                <div
+                    css={css`
+                        grid-area: 1/1;
+                        position: relative;
+                        place-items: center;
+                        display: grid;
+                    `}
+                >
+                    <Link
+                        to={"/about"}
+                        css={css`
+                            background-color: white;
+                            padding: 30px;
+                        `}
+                    >
+                        About
+                    </Link>
+                </div>
+
+                {/* Menu Link 2 (Gallery) */}
+                <StaticImage
+                    src="../images/kawhactus2.jpg"
+                    alt=""
+                    placeholder="blurred"
+                    css={css`
+                        grid-area: 1/2;
+                        width: 1fr;
+                        margin: 30px;
+                    `}
+                />
+                <div
+                    css={css`
+                        grid-area: 1/2;
+                        position: relative;
+                        place-items: center;
+                        display: grid;
+                    `}
+                >
+                    <Link
+                        to={"/gallery"}
+                        css={css`
+                            background-color: white;
+                            padding: 30px;
+                        `}
+                    >
+                        Gallery
+                    </Link>
+                </div>
+            </div>
             
         </div>
     )
@@ -89,23 +166,3 @@ export const query = graphql`
         }
     }
 `
-/*
-    logo: file(relativePath: { eq: "logos/silverfish_white_TP.png" }) {
-      childImageSharp {
-          gatsbyImageData(layout: FLUID)
-          fluid(maxWidth: 300, maxHeight: 300) {
-              ...GatsbyImageSharpFluid_tracedSVG
-          }
-      }
-    }
-    background: file(relativePath: { eq: "boat_stanley.JPG" }) {
-      childImageSharp {
-          gatsbyImageData(layout: FLUID)
-          fluid(maxHeight: 1575) {
-              ...GatsbyImageSharpFluid_tracedSVG
-          }
-      }
-    }
-  }
-`
-*/

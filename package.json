@@ -36,7 +36,8 @@
     "styled-components": "^5.3.3",
     "typography": "^0.16.21",
     "typography-theme-irving": "^0.16.19",
-    "typography-theme-lincoln": "^0.16.19"
+    "typography-theme-lincoln": "^0.16.19",
+    "typography-theme-st-annes": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "^2.5.1"
