@@ -29,8 +29,8 @@ export default function Home({data}) {
             >
                 <h1
                 css={css`
-                    font-size: 3vw;
-                    letter-spacing: 2rem;
+                    font-size: 4vw;
+                    letter-spacing: 2vw;
                     text-align: center;
                 `}
                 >
@@ -50,7 +50,7 @@ export default function Home({data}) {
                         `}
                     >
                         <StaticImage
-                            src="../images/boat_stanley_CROP.JPG"
+                            src="../images/boat_stanley_CROP.jpg"
                             alt="A ship at Lions Gate Bridge"
                             placeholder="blurred"
                             layout="fullWidth"
